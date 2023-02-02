@@ -1,0 +1,25 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+
+	li {
+		padding: 10px 15px;
+		background-color: #e07a52;
+		color: #fff;
+		border-radius: 5px;
+		cursor: pointer;
+
+		a {
+			color: inherit;
+			font-weight: 700;
+			font-size: 22px;
+		}
+	}
+
+	:global {
+		.selected {
+			background-color: #fe5f1e;
+		}
+	}
+}

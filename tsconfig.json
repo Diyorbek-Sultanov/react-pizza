@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"noImplicitAny": true,
+		"outDir": "./build/",
+		"preserveConstEnums": true,
+		"removeComments": true,
+		"sourceMap": true,
+		"target": "ES2016",
+		"strict": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"esModuleInterop": true
+	},
+	"include": ["src", "src/@types"]
+}
