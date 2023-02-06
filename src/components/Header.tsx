@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../redux/store'
+import { HiMoon, HiSun } from 'react-icons/hi'
 
 import Search from './Search'
 import { cartSelector } from '../redux/slices/cartSlice'
 import logoSvg from '../assets/img/pizza-logo.svg'
+import { setTheme } from '../redux/slices/themSlice'
 
 const Header: React.FC = () => {
+	const dispatch = useDispatch()
 	const isMounted = React.useRef(false)
+	const { isDark } = useSelector((state: RootState) => state.theme)
 	const { totalPrice, items } = useSelector(cartSelector)
 	const totalCount = items.reduce((sum: number, item) => sum + item.count, 0)
 	const location = useLocation()
@@ -19,6 +24,10 @@ const Header: React.FC = () => {
 		}
 		isMounted.current = true
 	}, [items])
+
+	const changeTheme = () => {
+		dispatch(setTheme(!isDark))
+	}
 
 	return (
 		<div className='header'>
@@ -77,6 +86,12 @@ const Header: React.FC = () => {
 						<span>{totalCount}</span>
 					</Link>
 				</div>
+				{/* <button onClick={changeTheme}>change themes</button> */}
+				{isDark ? (
+					<HiMoon className='theme-icon' onClick={changeTheme} />
+				) : (
+					<HiSun className='theme-icon' onClick={changeTheme} />
+				)}
 			</div>
 		</div>
 	)

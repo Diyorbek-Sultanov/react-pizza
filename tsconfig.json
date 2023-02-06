@@ -7,7 +7,7 @@
 		"preserveConstEnums": true,
 		"removeComments": true,
 		"sourceMap": true,
-		"target": "ES2016",
+		"target": "ES2018",
 		"strict": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"moduleResolution": "node",

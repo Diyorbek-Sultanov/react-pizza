@@ -12,6 +12,60 @@ body {
 	background-color: $background;
 }
 
+.layout .layout-dark body {
+	background-color: rgb(40, 39, 39);
+}
+
+.layout {
+	&-dark {
+		.wrapper {
+			background-color: $dark;
+		}
+
+		.header__logo {
+			h1 {
+				color: $dark-text;
+			}
+		}
+
+		.header {
+			input {
+				background-color: rgb(53, 51, 51);
+				color: $dark-text;
+			}
+		}
+
+		.button {
+			background-color: rgb(53, 51, 51);
+		}
+
+		.sort__label {
+			b {
+				color: $dark-text;
+			}
+		}
+
+		.pizza-block__selector {
+			background-color: rgb(53, 51, 51);
+
+			ul {
+				li {
+					color: $dark-text;
+				}
+				li.active {
+					background-color: rgb(30, 28, 28);
+				}
+			}
+		}
+
+		.pizza-block__price,
+		.content__title,
+		.pizza-block__title {
+			color: $dark-text;
+		}
+	}
+}
+
 .wrapper {
 	width: calc(100vw - 100px);
 	height: 100%;
@@ -74,6 +128,20 @@ body {
 			font-size: 24px;
 		}
 	}
+}
+
+// Theme Icon
+.theme-icon {
+	font-size: 15px;
+	background-color: rgb(214, 212, 212);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all 0.3s ease;
 }
 
 .container {
